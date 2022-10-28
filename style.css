@@ -1,0 +1,324 @@
+h1 { font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font: times ;
+    color: rgb(20, 2, 34);
+}
+
+/* header */
+
+.header-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(217, 176, 249);
+    background-image: url(./assets/gif.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 112px;
+    position:  relative;
+}
+
+.eu{
+    border-radius: 100;
+}
+
+
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 45px;
+}
+h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+.social-media {
+    margin-top: 1rem;
+    display:flex       
+    }
+    .social-media a {
+        text-decoration: none;
+        color: rgb(20, 2, 34);
+        padding: 1rem 4rem;
+        border: 1px solid rgb(20, 2, 34);
+        min-width: 4rem; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s ease-in-out
+    }
+    a:hover {
+        background-color: #58007A;
+    }
+
+    
+
+    /* menu burguer */
+
+    .checkbox-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.checkbox {
+    height:  100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s
+}
+
+.checkbox .trace{
+    width: 50px;
+    height: 2px;
+    background-color: rgb(20, 2, 34); 
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+ }  
+.checkbox .trace:nth-child(3) {  
+    top: 66px;
+    transform: rotate(0);
+}
+
+ #toggle {
+    display: none;
+ }
+
+ /*menu*/
+
+ .menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px rgb(217, 176, 249);
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+ }
+ .menu-items {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out
+ }
+    
+
+.menu-items  {
+    background-color:rgb(20, 2, 34);
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    color:rgb(20, 2, 34) ;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+form{
+   
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+}
+
+input{
+    height: 3vh;
+    width: 20vw;
+    border-radius: 30px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+/*animations of menu*/ 
+
+#toggle:checked + .checkbox .checkbox:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .checkbox:nth-child(2){
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+ }
+
+ #toggle:checked + .checkbox .checkbox:nth-child(2){
+    transform:rotate(-45deg);
+    top: 48px;
+ }
+
+ #toggle:checked + .checkbox {
+    background-color:rgb(217, 176, 249);
+ }
+
+ #toggle:checked  ~ .menu {
+    box-shadow: 0px 0px 0px 100vmax rgb(20, 2, 34);
+    z-index: 2;
+
+ }
+
+ #toggle:checked ~ .menu-items {
+    visibility: visible;
+    opacity: 1;
+ }
+
+ /*cards*/
+ 
+ .container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space space-evenly;
+    margin: 3rem 0;
+    
+ }
+
+ .card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+ }
+
+ .card{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 6rem 0 0 0;
+    align-items: center;
+    justify-content: center;
+    background-color: #58007A;
+    background-image: url(./assets/303995955005201.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color:rgb(217, 176, 249);
+    cursor: pointer;
+    transition: 0.5s ease-in-out
+ } 
+
+ .card-text {
+    font-size: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    letter-spacing: 1px;
+    color: rgb(20, 2, 34);
+ 
+}
+.card-text p {
+    font-size: 25px;
+    text-align: justify;
+}
+
+.text2 {
+    display: flex;
+    flex-direction: row;
+    
+}
+ .card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }
+
+ .card-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid #58007A;
+    opacity:0 ;
+    transition: 0.5s ease-in-out
+ }
+
+ .card-wrapper p {
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition:  0.5s ease-in-out;   
+}
+.card:hover {
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before {
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}
+.card:hover > .card-wrapper p {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px
+
+
+}
+/*footer*/
+
+.footer {
+    font: times 40px bold;
+    width: 100%;
+    height: 100px;
+    background-image:url(./assets/ico-logo.png);
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: center;
+    background-color:rgb(217, 176, 249);
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
